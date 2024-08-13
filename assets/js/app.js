@@ -31,8 +31,33 @@ function next() {
 }
 
 /* sørger for at billedet skifter hver 3 sekund */
-setInterval(next, 2000);
+setInterval(next, 3000);
 
 /* Sørger for at det første billede kommer med det samme  og ikke efter
 3 sekunder */
 setActiveSlide(currentImageIndex);
+
+/* Array */
+let imageSource = [
+  "https://picsum.photos/300/300?random=1 ",
+  "https://picsum.photos/300/300?random=2 ",
+  "https://picsum.photos/300/300?random=3 ",
+];
+
+let slideContent = [
+  "Billede 1 - Her er en beskrivelse af dette billede.",
+  "Billede 2 - Her er en beskrivelse af dette billede.",
+  " Billede 3 - Her er en beskrivelse af dette billede.",
+];
+
+/* Next button function */
+let nextBtn = document.querySelector(".next-btn");
+let previousBtn = document.querySelector(".previous-btn");
+
+nextBtn.addEventListener("click", () => {
+  currentImageIndex += 1;
+});
+
+previousBtn.addEventListener("click", () => {
+  currentImageIndex -= 1;
+});
