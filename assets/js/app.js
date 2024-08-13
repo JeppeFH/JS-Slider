@@ -12,6 +12,8 @@ let currentImageIndex = 0;
 /* function der bestemmer hvilket billede der vises */
 function setActiveSlide() {
   slides.forEach((slide) => {
-    slide.classList.remove(".active");
+    slide.classList.remove("active");
   });
+
+  slides[0].classList.add("active");
 }
