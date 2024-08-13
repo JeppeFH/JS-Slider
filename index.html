@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Boilerplate</title>
+    <title>JS-Slider</title>
 
     <link
       rel="stylesheet"
@@ -26,40 +26,38 @@
   </head>
 
   <body>
-    <!-- section [Navigation] -->
-    <nav>
-      <a href="index.html"><img src="/assets/img/logo.png" alt="logo" /></a>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="#">Link</a></li>
-        <li><a href="#">Link</a></li>
-        <li><a href="#">Link</a></li>
-        <li><a class="signup-btn" href="#">Sign up</a></li>
-      </ul>
+    <div class="slider-wrapper" id="slider01">
+      <div class="slides">
+        <div class="display"></div>
 
-      <i class="fa-solid fa-bars burgerMenuOpen"></i>
-      <i class="fa-solid fa-xmark burgerMenuClose"></i>
-    </nav>
+        <div class="display"></div>
 
-    <!-- Section [Hero] -->
-    <section class="hero"></section>
+        <div class="single-slide">
+          <div class="slide-content">
+            Billede 1 - Her er en beskrivelse af dette billede.
+          </div>
+          <img src="./assets/img/img1.jpeg" alt="billede 1" />
+        </div>
 
-    <!-- Section [name] -->
-    <section class=""></section>
+        <div class="single-slide">
+          <div class="slide-content">
+            Billede 2 - Her er en beskrivelse af dette billede.
+          </div>
+          <img src="./assets/img/img2.jpg" alt="Produkt 2" />
+        </div>
 
-    <!-- Section [name] -->
-    <section class=""></section>
+        <div class="single-slide">
+          <div class="slide-content">
+            Billede 3 - Her er en beskrivelse af dette billede.
+          </div>
+          <img src="./assets/img/img3.jpg" alt="Produkt 3" />
+        </div>
+      </div>
 
-    <!-- Section [name] -->
-    <section class=""></section>
-
-    <!-- Section [name] -->
-    <section class=""></section>
-
-    <!-- Section [name] -->
-    <section class=""></section>
-
-    <!-- Section [Footer] -->
-    <footer></footer>
+      <div class="slider-buttons">
+        <button data-direction="previous">Tilbage</button>
+        <button data-direction="next">Frem</button>
+      </div>
+    </div>
   </body>
 </html>
