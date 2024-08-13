@@ -30,4 +30,4 @@ function next() {
 }
 
 setInterval(next, 2000);
-setActiveSlide(0);
+setActiveSlide(currentImageIndex);
