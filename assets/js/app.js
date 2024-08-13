@@ -19,6 +19,7 @@ function setActiveSlide(index) {
   slides[index].classList.add("active");
 }
 
+/* function der laver slidereffect */
 function next() {
   if (currentImageIndex >= slidesLength) {
     currentImageIndex = 0;
@@ -29,5 +30,9 @@ function next() {
   setActiveSlide(currentImageIndex);
 }
 
+/* sørger for at billedet skifter hver 3 sekund */
 setInterval(next, 2000);
+
+/* Sørger for at det første billede kommer med det samme  og ikke efter
+3 sekunder */
 setActiveSlide(currentImageIndex);
