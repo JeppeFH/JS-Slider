@@ -31,33 +31,56 @@ function next() {
 }
 
 /* sørger for at billedet skifter hver 3 sekund */
-setInterval(next, 3000);
+setInterval(next, 2000);
 
 /* Sørger for at det første billede kommer med det samme  og ikke efter
 3 sekunder */
 setActiveSlide(currentImageIndex);
 
-/* Array */
-let imageSource = [
-  "https://picsum.photos/300/300?random=1 ",
-  "https://picsum.photos/300/300?random=2 ",
-  "https://picsum.photos/300/300?random=3 ",
+/* sliderbillede array */
+const imageSources = [
+  "./assets/img/img1.jpeg",
+  "./assets/img/img2.jpg",
+  "./assets/img/img3.jpg",
 ];
 
-let slideContent = [
+/* Billedbeskrivelse array */
+const slideContents = [
   "Billede 1 - Her er en beskrivelse af dette billede.",
   "Billede 2 - Her er en beskrivelse af dette billede.",
-  " Billede 3 - Her er en beskrivelse af dette billede.",
+  "Billede 3 - Her er en beskrivelse af dette billede.",
 ];
 
+/* funktion (forEach) der "kører" de to arrays */
+/* index fortæller position af slides 0, 1, 2 osv, hvilket gør at den 
+skifter */
+slides.forEach((slide, index) => {
+  /*2 variabler der referer til parameter i forEach, (slide.) bruges 
+  til at "ramme" alle elementer, hvor hvis man havde brugt (document.) 
+  havde fundet det første content i array*/
+  const content = slide.querySelector(".slide-content");
+  const image = slide.querySelector("img");
+
+  /* Tager content som referer til html og bruger tekst fra array og 
+  looper med index  */
+  /* textContent er en property, der bruges til at sætte eller hente tekst 
+   i HTML. Ved brug af arrays med strenge, bruges textContent til at 
+   indsætte disse strenge i HTML-elementer. */
+  content.textContent = slideContents[index];
+
+  /* Finder img-elementet og sætter dets src-attribut 
+   til den tilsvarende URL i imageSources-arrayet */
+  image.src = imageSources[index];
+});
+
 /* Next button function */
-let nextBtn = document.querySelector(".next-btn");
-let previousBtn = document.querySelector(".previous-btn");
+const nextBtn = document.querySelector(".next-btn");
+const previousBtn = document.querySelector(".previous-btn");
 
-nextBtn.addEventListener("click", () => {
-  currentImageIndex += 1;
-});
-
-previousBtn.addEventListener("click", () => {
+function previous() {
   currentImageIndex -= 1;
-});
+  setActiveSlide(currentImageIndex);
+}
+
+nextBtn.addEventListener("click", next);
+previousBtn.addEventListener("click", previous);
